@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/createDataBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE DATABASE"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD DATA"
+        app:layout_constraintTop_toBottomOf="@+id/createDataBase"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <Button
+        android:id="@+id/queryData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUERY DATA"
+        app:layout_constraintTop_toBottomOf="@+id/addData"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <Button
+        android:id="@+id/updateData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPDATE DATA"
+        app:layout_constraintTop_toBottomOf="@+id/queryData"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <Button
+        android:id="@+id/deleteData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE DATA"
+        app:layout_constraintTop_toBottomOf="@+id/updateData"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Button
+        android:id="@+id/replaceData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REPLACE DATA"
+        app:layout_constraintTop_toBottomOf="@+id/deleteData"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
