@@ -1,6 +1,7 @@
 package com.example.datebasetestdemo
 
 import android.content.ContentValues
+import java.lang.StringBuilder
 
 /**
  * vararg 关键字指的是可以传入过个Pari类型的参数
@@ -27,4 +28,14 @@ fun cvOf(vararg pairs: Pair<String, Any?>) : ContentValues {
         }
     }
     return cv
+}
+
+fun StringBuilder.build(block: StringBuilder.() -> Unit): StringBuilder {
+    block()
+    return this
+}
+
+fun <T> T.build(block: T.() -> Unit): T {
+    block()
+    return this
 }

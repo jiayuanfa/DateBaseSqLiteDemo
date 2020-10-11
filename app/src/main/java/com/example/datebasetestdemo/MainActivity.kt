@@ -1,9 +1,17 @@
 package com.example.datebasetestdemo
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.ContentValues
+import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 import java.lang.NullPointerException
@@ -17,6 +25,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        // 创建一个通知
+        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel("important", "Important", NotificationManager.IMPORTANCE_HIGH)
+            manager.createNotificationChannel(channel)
+        }
+        notificationButton.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
+            val pi = PendingIntent.getActivity(this, 0, intent, 0)
+            val notification = NotificationCompat.Builder(this, "important")
+                    .setContentTitle("This is content title")
+                    .setStyle(NotificationCompat.BigTextStyle().bigText("Learn how to build notification, send and sync data, and use voice action, Get the official Android IDF and developer tools to build apps"))
+                    .setSmallIcon(R.mipmap.small_icon)
+                    .setLargeIcon(BitmapFactory.decodeResource(resources, R.mipmap.large_icon))
+                    .setContentIntent(pi)
+                    .setAutoCancel(true)
+                    .build()
+            manager.notify(1, notification)
+        }
 
         val dbHelper = MyDataBaseHelper(this, "BookStore.db", 1)
         createDataBase.setOnClickListener {
