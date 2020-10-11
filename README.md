@@ -1,1 +1,8 @@
-"# DateBaseSqLiteDemo" 
+"# DateBaseSqLiteDemo"
+
+- 数据库的增删改查
+- 泛型的使用
+- 手写懒加载
+- 通知以及通知的高级用法
+- 调用系统的摄像头拍照
+
