@@ -17,6 +17,16 @@
         </activity>
 
         <activity android:name=".NotificationActivity"/>
-    </application>
 
+        <provider
+            android:authorities="com.example.camera.test"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                />
+        </provider>
+    </application>
 </manifest>
